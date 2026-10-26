@@ -1,0 +1,348 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+    background: #f4f7f9;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+    background: #0a1931;
+    color: #fff;
+    padding: 14px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo span {
+    color: #2ec4b6;
+    font-weight: 800;
+}
+
+/* Outline Button */
+.btn-outline {
+    background: transparent;
+    border: 1px solid #2ec4b6;
+    color: #2ec4b6;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: #2ec4b6;
+    color: #0a1931;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #e0f2f1, #f1f8ff);
+    padding: 40px 30px;
+}
+
+.hero h1 {
+    font-size: 28px;
+    color: #0a1931;
+    max-width: 700px;
+}
+
+.hero p {
+    margin: 10px 0 18px;
+    color: #555;
+}
+
+.hero-cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.h-card {
+    background: #fff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+}
+
+/* Section Title */
+.title {
+    padding: 20px 30px 0;
+    font-size: 24px;
+    color: #0a1931;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #0a1931;
+}
+
+.filter-btn.active {
+    background: #0a1931;
+    color: #fff;
+    border-color: #0a1931;
+}
+
+/* Product Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(260px, 1fr)
+    );
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+/* Product Card */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image */
+.card img {
+    width: 100%;
+    height: 175px;
+    object-fit: contain;
+    background: #fafafa;
+    padding: 12px;
+    display: block;
+}
+
+/* Product Card Body */
+.card-body {
+    padding: 14px;
+}
+
+.card-body h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.card-body .meta {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+/* Price Row */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.price {
+    color: #0a8a74;
+    font-weight: 700;
+}
+
+/* Product Button */
+.card-body button {
+    background: #14a09f;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.card-body button:hover {
+    background: #0a1931;
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 15px;
+}
+
+/* Modal Box */
+.modal-box {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    animation: pop 0.2s ease;
+}
+
+.modal-box.large {
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Modal Labels */
+.modal-box label {
+    display: block;
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Modal Inputs and Select */
+.modal-box input,
+.modal-box select {
+    width: 100%;
+    padding: 9px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.modal-box input:focus,
+.modal-box select:focus {
+    border-color: #14a09f;
+}
+
+/* Total Price Box */
+.total-box {
+    background: #eef7f6;
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Primary Button */
+.btn-primary {
+    width: 100%;
+    background: #0a1931;
+    color: #fff;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #14a09f;
+}
+
+/* Small Text */
+.small {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Popup Animation */
+@keyframes pop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 14px 16px;
+    }
+
+    .hero {
+        padding: 30px 16px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .title {
+        padding: 20px 16px 0;
+        font-size: 21px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .hero-cards {
+        flex-direction: column;
+    }
+
+    .h-card {
+        width: 100%;
+    }
+
+    .filters {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 7px 13px;
+    }
+}

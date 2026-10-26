@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriveEase - Vehicle Rental System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">🚗 <span>DriveEase</span> Rentals</div>
+  <div class="nav-right">
+    <span>Total Bookings: <b id="totalCount">0</b></span>
+    <button class="btn-outline" onclick="showBookings()">My Bookings</button>
+    <a href="admin.html" class="btn-outline">Admin</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Vehicle Rental Booking & Payment Management</h1>
+  <p>Browse, book, and manage your vehicle rentals with secure payments — all in one place.</p>
+  <div class="hero-cards">
+    <div class="h-card">Revenue This Month<br><strong>₹<span id="rev">0</span></strong></div>
+    <div class="h-card">Active Rentals<br><strong id="active">0</strong></div>
+  </div>
+</section>
+
+<h2 class="title">Available Vehicles</h2>
+<div class="filters">
+  <button class="filter-btn active" data-type="all">All</button>
+  <button class="filter-btn" data-type="car">Cars</button>
+  <button class="filter-btn" data-type="bike">Bikes</button>
+  <button class="filter-btn" data-type="suv">SUV</button>
+</div>
+
+<div id="vehicleList" class="grid"></div>
+
+<!-- Booking Modal -->
+<div id="bookModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal('bookModal')">&times;</span>
+    <h3 id="modalVehicleName">Vehicle Name</h3>
+    <p class="small">Price: ₹<span id="modalPrice"></span>/day</p>
+    <label>From Date<input type="date" id="fromDate"></label>
+    <label>To Date<input type="date" id="toDate"></label>
+    <label>Your Name<input type="text" id="userName" placeholder="Enter name"></label>
+    <label>Phone<input type="tel" id="userPhone" placeholder="9876543210"></label>
+    <div class="total-box">Total Amount: ₹<span id="totalAmount">0</span> for <span id="totalDays">0</span> days</div>
+    <button class="btn-primary" onclick="proceedToPay()">Proceed to Payment →</button>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div id="payModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal('payModal')">&times;</span>
+    <h3>Payment Management</h3>
+    <p>Amount to Pay: <b>₹<span id="payAmount"></span></b></p>
+    <label>Payment Method
+      <select id="payMethod">
+        <option value="UPI">UPI</option>
+        <option value="Card">Credit/Debit Card</option>
+        <option value="Netbanking">Netbanking</option>
+        <option value="COD">Pay at Pickup</option>
+      </select>
+    </label>
+    <label id="payLabel">UPI ID / Card Number<input type="text" id="payDetails" placeholder="example@upi / 4111 1111 1111 1111"></label>
+    <button class="btn-primary" onclick="confirmBooking()">Pay & Confirm Booking</button>
+  </div>
+</div>
+
+<!-- My Bookings Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-box large">
+    <span class="close" onclick="closeModal('myModal')">&times;</span>
+    <h3>My Bookings & Payment History</h3>
+    <div id="myBookingsList"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
